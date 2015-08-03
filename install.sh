@@ -5,7 +5,7 @@ old_dir=~/old_dotfiles
 echo "creating $old_dir folder for backup"
 mkdir -p $old_dir
 echo "......done"
-files="bashrc bash_profile vimrc"
+files="bashrc bash_profile vimrc tmux.conf"
 
 echo "changing to $dir folder"
 cd $dir
