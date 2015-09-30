@@ -51,3 +51,6 @@ eval "$(rbenv init -)"
 if [ -f ~/.git-completion.bash ]; then
       . ~/.git-completion.bash
   fi
+
+export NVM_DIR="/home/ub/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
