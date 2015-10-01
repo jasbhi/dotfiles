@@ -52,5 +52,5 @@ if [ -f ~/.git-completion.bash ]; then
       . ~/.git-completion.bash
   fi
 
-export NVM_DIR="/home/ub/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
