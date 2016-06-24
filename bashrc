@@ -35,7 +35,7 @@ shopt -s checkwinsize
 ## other aliass ##
 alias ..='cd ..'
 alias la='ls -a'
-alias ls='ls --color'
+alias ls='ls -G'
 alias mkdir='mkdir -p -v'
 
 
