@@ -46,11 +46,13 @@ alias gb='git branch'
 alias gdf='git diff --word-diff'
 
 #rails command
-export PATH="$HOME/.rbenv/bin:$HOME/ruby-build/bin:$PATH"
-eval "$(rbenv init -)"
 if [ -f ~/.git-completion.bash ]; then
       . ~/.git-completion.bash
   fi
-
+export PATH="$HOME/.rbenv/bin:$HOME/ruby-build/bin:$PATH"
+eval "$(rbenv init -)"
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
