@@ -20,39 +20,45 @@ function proml {
     TITLEBAR=""
     ;;
   esac
-PS1="$LIGHT_RED${TITLEBAR}\
-\u@\h:\w$GREEN\$(parse_git_branch)\
+PS1="$RED\w$GREEN\$(parse_git_branch)\
 $LIGHT_GRAY> "
 PS2='> '
 PS4='+ '
 }
 proml
 
+//avoid duplicate entries 
+export HISTCONTROL=ignoreboth:erasedups
+
 ##shopt options##
 shopt -s cdspell
 shopt -s checkwinsize
 
 ## other aliass ##
+alias desk='cd ~/Desktop'
+alias ~='cd ~'
+alias -='cd -'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias la='ls -a'
+alias ll='ls -lah'
+alias lr='ls -lR'
 alias ls='ls -G'
 alias mkdir='mkdir -p -v'
 
 
 #git aliases
 alias gs='git status -s'
-alias gp='git pull'
+alias gpull='git pull'
+alias gpush='git push'
 alias gb='git branch'
 alias gdf='git diff --word-diff'
+alias gcom='git commit'
+alias gl='git log'
 
-#rails command
-if [ -f ~/.git-completion.bash ]; then
-      . ~/.git-completion.bash
-  fi
 export PATH="$HOME/.rbenv/bin:$HOME/ruby-build/bin:$PATH"
 eval "$(rbenv init -)"
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/Library/PostgreSQL/9.6/bin/:$PATH"
